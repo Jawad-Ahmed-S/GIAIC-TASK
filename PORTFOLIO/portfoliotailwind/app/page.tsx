@@ -7,7 +7,7 @@
 // import Link from 'next/link';
 export default function Home() {
   return(
-   <h1>This site may not be visible correctly(Under Progress),<br />You may check this link for this:  <a href="https://portfolio-css-bice.vercel.app/" className="text-[orangered] font-bold {hover: text-[red]}">Portfolio</a></h1>
+   <h1 className="text-center text-lg">This site may not be visible correctly(Under Progress),<br />You may check this link for this:  <a href="https://portfolio-css-bice.vercel.app/" className="text-[orangered] font-bold  hover:text-[red]">Portfolio</a></h1>
 
 //   const el = React.useRef(null);
                 
