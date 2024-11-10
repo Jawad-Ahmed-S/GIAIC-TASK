@@ -1,6 +1,5 @@
 import styles from "./page.module.css"
 import Navbar from "@/app/Components/navbar/Navbar"
-import Image from "next/image"
 import object from "./data";
 import Link from "next/link";
 export default function About() {
