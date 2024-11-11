@@ -21,7 +21,7 @@ export default function About(){
         <div className="min-h-screen ml-[25vw] p-8">
           <Navbar />
           <div className="relative mb-20">
-            <div className="relative z-10 text-[orangered] font-['Style Script',cursive] text-5xl mb-4">About Me</div>
+            <div className="relative z-10 text-[orangered] font-bold font-['Style_Script'] text-5xl mb-4">About Me</div>
             <p className="text-lg text-gray-800 leading-7 max-w-2xl">
               Hello! I'm a passionate Computer Science student with a keen interest in web development 
               and software engineering. I love turning complex problems into simple, beautiful, and 
