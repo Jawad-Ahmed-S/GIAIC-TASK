@@ -16,7 +16,7 @@ export default function Home() {
           Start your journey towards a more fulfilling life today!
         </h3>
         
-        <Link href="../blog">
+        <Link href="./blog">
           <button className="bg-[brown] text-white outline-none border-none rounded-md px-6 py-3 text-xl hover:bg-[rgb(140,35,35)] active:bg-[rgb(100,36,36)] cursor-pointer">
             Read our Blog &#8594;
           </button>
