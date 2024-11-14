@@ -39,16 +39,22 @@ export default function About(){
             
             <div className={styles.timelineItem}>
               <div className={styles.timelineDot}></div>
-              <div className={styles.timelineYear}>2022 - Present</div>
+              <div className={styles.timelineYear}>2024 - Present</div>
               <div className={styles.timelineDegree}>Bachelor in Computer Science</div>
-              <div className={styles.timelineInstitution}>Your University Name</div>
+              <div className={styles.timelineInstitution}>FAST NUCES, Karachi</div>
             </div>
 
             <div className={styles.timelineItem}>
               <div className={styles.timelineDot}></div>
+              <div className={styles.timelineYear}>2022 - 2024</div>
+              <div className={styles.timelineDegree}>Intermediate</div>
+              <div className={styles.timelineInstitution}>Army Public School & College</div>
+            </div>
+            <div className={styles.timelineItem}>
+              <div className={styles.timelineDot}></div>
               <div className={styles.timelineYear}>2020 - 2022</div>
-              <div className={styles.timelineDegree}>Higher Secondary Education</div>
-              <div className={styles.timelineInstitution}>Your School Name</div>
+              <div className={styles.timelineDegree}>Matriculation</div>
+              <div className={styles.timelineInstitution}>Gallant Foundation School</div>
             </div>
           </div>
         </section>
@@ -68,13 +74,10 @@ export default function About(){
               <FileJson2 className={styles.skillIcon} size={32} />
               <div className={styles.skillName}>JavaScript</div>
             </div>
-            <div className={styles.skillBox}>
-              <LucideAtom className={styles.skillIcon} size={32} />
-              <div className={styles.skillName}>React</div>
-            </div>
+            
             <div className={styles.skillBox}>
               <Terminal className={styles.skillIcon} size={32} />
-              <div className={styles.skillName}>Python</div>
+              <div className={styles.skillName}>C/C++</div>
             </div>
             <div className={styles.skillBox}>
               <GitBranchIcon className={styles.skillIcon} size={32} />
@@ -82,7 +85,7 @@ export default function About(){
             </div>
             <div className={styles.skillBox}>
               <Layout className={styles.skillIcon} size={32} />
-              <div className={styles.skillName}>Node.js</div>
+              <div className={styles.skillName}>Tailwind CSS</div>
             </div>
           </div>
         </section>

@@ -65,7 +65,9 @@
     vertical-align: middle;
     margin-right: 1em;
 }
-
+.list li a{
+    display: flex;
+}
 .list.NightList {
     color: rgb(207, 207, 207);
     transition: all 0.3s ease-in;
