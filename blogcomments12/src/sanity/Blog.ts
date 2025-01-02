@@ -1,4 +1,4 @@
-const =
+const BlogSchemas={
   name: 'Blog',
   type: 'document',
   title: 'Blog',
@@ -70,3 +70,4 @@ const =
     },
   ],
 };
+export default BlogSchemas;
