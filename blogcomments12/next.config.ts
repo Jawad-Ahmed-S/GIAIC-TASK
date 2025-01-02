@@ -2,12 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.sanity.io'], // Allow Sanity's CDN as a source
+    domains: ['cdn.sanity.io'],
   },
 };
 module.exports = {
   typescript: {
-    // Ignore TypeScript errors during build
     ignoreBuildErrors: true,
   },
 };

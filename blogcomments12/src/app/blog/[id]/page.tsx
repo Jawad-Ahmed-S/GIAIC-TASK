@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "../../Components/Navbar";
 import CommentSection from "../../Components/Comments";
-import { client } from "@/sanity/lib/client";
+import { client } from "@/src/sanity/lib/client";
 import imageUrlBuilder from '@sanity/image-url';
 
 interface ImageTypes {
@@ -20,25 +20,29 @@ interface BlogTypes {
 
 const builder = imageUrlBuilder(client);
 function urlFor(source: any) {
-  return builder.image(source);
+  return builder.image(source as string);
 }
 
 
-export default async function Blog({ params }: { params: { id: number } }) {
+export default async function Blog({
+  params,
+}: {
+  params: { id: string }; 
+}) {
+  const blogIndex = parseInt(params.id, 10); 
   const res: BlogTypes[] = await client.fetch(`*[_type == 'Blog']`);
-  const blog = res[params.id];
+  const blog = res[blogIndex]; 
+  if (!blog) {
+    throw new Error("Blog not found");
+  }
 
+  
   return (
     <div className="flex flex-col items-center">
       <Navbar/>
-   {/* {(() => {
-  const posterUrl = blog.poster?.asset?._ref
-    ? urlFor(blog.poster.asset._ref).width(1200).height(600).url()
-    : '/default-background.jpg';
+
   
-  console.log(posterUrl); 
-  return null; 
-})()} */}
+
       <div
         className="flex items-center justify-center w-full h-[40vh] bg-cover bg-center text-white text-[2em] font-sans"
         style={{
@@ -49,34 +53,34 @@ export default async function Blog({ params }: { params: { id: number } }) {
         <h1 className="text-white">{blog.name}</h1>
       </div>
       <section className="w-[90vw] max-w-[1000px] flex  flex-col my-5 mx-auto text-[#333] leading-relaxed font-sans">
-        {blog.Content.map((block, index) => {
+        {blog.Content.map((block, BlogIndex) => {
           {console.log(block.style)}
          
         if (block._type === 'block' && block.style) {
   switch (block.style) {
     case 'h1':
       return (
-        <h1 key={index} className="mb-8 font-bold text-[3rem] text-justify text-[#0b4d83]">
+        <h1 key={BlogIndex} className="mb-8 font-bold text-[3rem] text-justify text-[#0b4d83]">
           {block.children[0]?.text}
         </h1>
       );
     case 'h2':
       return (
-        <h2 key={index} className="mb-6 font-bold text-[2rem] text-justify text-[#0b4d83]">
+        <h2 key={BlogIndex} className="mb-6 font-bold text-[2rem] text-justify text-[#0b4d83]">
           {block.children[0]?.text}
         </h2>
       );
     case 'h3':
       return (
         
-        <h3 key={index} className="mb-4 font-bold text-2xl text-justify text-[#0b4d83]">
+        <h3 key={BlogIndex} className="mb-4 font-bold text-2xl text-justify text-[#0b4d83]">
           {block.children[0]?.text}
         </h3>
         
       );
     default:
       return (
-        <p key={index} className="mb-8 text-justify text-[#444]">
+        <p key={BlogIndex} className="mb-8 text-justify text-[#444]">
                 {block.children[0]?.text}
               </p>
       );
@@ -85,7 +89,7 @@ export default async function Blog({ params }: { params: { id: number } }) {
           if (block._type === 'image') {
             
             return (
-              <div key={index} className="my-5">
+              <div key={BlogIndex} className="my-5">
                 <Image className="w-[100%] h-80 rounded-lg"
                   src={urlFor(block.asset._ref).width(1500).height(500).url()}
                   alt={block.caption || 'Blog Image'}
