@@ -30,7 +30,7 @@ type Params = { id: string };
 type PageProps = {
   params: Promise<Params>; // Fixed: Params treated as a Promise
 };
-
+  
 // Blog Component
 export default async function Blog({ params }: PageProps) {
   const { id } = await params; // Fixed: Await params properly
